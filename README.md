@@ -1,9 +1,13 @@
 # GPU Fluid Simulation
-<img src="Images/7.png" width="30%"/>
+<!-- <img src="Images/7.png" width="30%"/>
 <img src="Images/9.png" width="30%"/>
-<img src="Images/s4.gif" width="30%"/>
+<img src="Images/s4.gif" width="30%"/> -->
 
-From left to right: pressure buffer, 3D visualize of pressure buffer, shaded water rendering.
+Pressure Buffer             |  3D Visualize of Pressure Buffer | Shaded Water Surface             
+:-------------------------:|:-------------------------:|:-------------------------:
+![](Images/7.png)  |  ![](Images/9.png)   |  ![](Images/s4.gif)
+
+<!-- From left to right: pressure buffer, 3D visualize of pressure buffer, shaded water rendering. -->
 
 ## Goal and Result
 The goal of this project is to implement GPU driven fluid simulation and the shading of the water surface as well as adding interactions to it. The result shows a simulated water surface with both refraction and light reflection shading. The visualization of pressure buffer
