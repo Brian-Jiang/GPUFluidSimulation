@@ -20,20 +20,20 @@ This compute shader changes the velocity buffer by calculating the force positio
 
 ### Diffusion
 Diffusion handles the diffuse of velocity by using Jacobi Solver. The entire simulation uses back tracing instead of euler’s method, that means we trace where the value comes from for each grid cell. The result formula is a Poisson Equation and must be solved using an iterative solver. For the diffusion, that means we know velocities of all cells from the last frame and we have equations of velocity of all cells from this frame. We will use velocities from the last frame as initial guess and iterate this process so the result is close to the actual solution.
-<img src="Images/1.png" width="100%"/>\
+<img src="Images/1.png" width="40%"/>\
 *Fast Fluid Dynamics Simulation on the GPU, Mark J. Harris*
 
 The pseudo code for one iteration looks like this
-<img src="Images/2.png" width="100%"/>\
+<img src="Images/2.png" width="80%"/>\
 *Fast Fluid Dynamics Simulation on the GPU, Mark J. Harris*
 
 ### Advection
 Advection handles the flow of fluid based on its velocity. Back tracing is also used in this step, but tracing the velocity one step is not accurate as shown in the graph below.
-<img src="Images/3.png" width="100%"/>\
+<img src="Images/3.png" width="80%"/>\
 *Fluid Simulation for Computer Graphics, Robert Bridson*
 
 Therefore I used the Runge-Kutta method with 2nd order that gives higher precision compared to one step back tracing. This method first traces to a middle point then traces again for the destination.
-<img src="Images/4.png" width="100%"/>\
+<img src="Images/4.png" width="80%"/>\
 *Fluid Simulation for Computer Graphics, Robert Bridson*
 
 Furthermore, to avoid racing conditions, I used the ping pong buffer with copy back so this step can run with 2 dispatches.
@@ -65,7 +65,7 @@ The render pipeline has been modified and now it supports changing render textur
 
 ### Second Pass
 Before rendering the water, render target was set to glow target if post process is on, otherwise to default back buffer.
-<img src="Images/s2.png" width="60%"/>
+<img src="Images/s2.png" width="50%"/>
 
 The result of the first pass was used as SRV to query texture for refraction. When rendering the water surface, the normal will be calculated in the pixel shader from the pressure buffer. After that, the normal will be transferred to screen space and the texture will be queried by an offset of uv along the inverse normal direction. Besides refraction, regular light shading will also be applied on the surface based on world coordinate normal.
 <img src="Images/s3.png" width="100%"/>
