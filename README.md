@@ -1,7 +1,8 @@
 # GPU Fluid Simulation
-<img src="Images/7.png" width="32%"/>
-<img src="Images/9.png" width="32%"/>
-<img src="Images/s4.gif" width="32%"/>
+<img src="Images/7.png" width="30%"/>
+<img src="Images/9.png" width="30%"/>
+<img src="Images/s4.gif" width="30%"/>
+
 From left to right: pressure buffer, 3D visualize of pressure buffer, shaded water rendering.
 
 ## Goal and Result
