@@ -10,7 +10,7 @@ Pressure Buffer             |  3D Visualize of Pressure Buffer | Shaded Water Su
 <!-- From left to right: pressure buffer, 3D visualize of pressure buffer, shaded water rendering. -->
 
 ## Goal and Result
-The goal of this project is to implement GPU driven fluid simulation and the shading of the water surface as well as adding interactions to it. The result shows a simulated water surface with both refraction and light reflection shading. The visualization of pressure buffer
+The goal of this project is to implement GPU driven fluid simulation and the shading of the water surface in C++ and DirectX 11 using compute shaders. The result shows a simulated water surface with both refraction and light reflection shading. The visualization of pressure buffer also shows proper handling of boundaries.
 
 ## Simulation Process
 The simulation runs on a 2D grid using Navier-Stokes Equations for Incompressible Flow. The grid has fixed size and each simulation frame has multiple steps. After all simulation steps, the mesh will be rendered by bilinear interpolation on the pressure structuredBuffer.
@@ -75,3 +75,4 @@ You can interact with the water surface using the mouse pointer. Besides adding 
 ## Result
 The result shows the rendering of the water surface on top of the original scene, will correct handling of depth and includes refraction and light reflection.
 <img src="Images/s4.gif" width="100%"/>
+<img src="Images/s5.gif" width="100%"/>
